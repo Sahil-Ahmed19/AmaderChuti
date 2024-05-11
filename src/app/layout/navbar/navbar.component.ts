@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { FlexLayoutModule } from '@angular/flex-layout';
 import { MaterialModule } from '../../material/material.module';
 
 @Component({
