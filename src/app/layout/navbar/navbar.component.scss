@@ -5,7 +5,13 @@
 mat-toolbar{
     height: 60px;
     background: #18283B;
-    position: relative;
+    position: fixed;
+    z-index: 9999;
+
+    span.website-name {
+        margin-left: 120px;
+        font-style: italic;
+    }
 
     a{
         padding: 8px 30px;
@@ -30,14 +36,20 @@ figure.logo {
     position: absolute;
     top: 0;
     z-index: 2;
-    padding: 10px 10px 2px 10px;
-    margin: 10px 20px;
+    padding: 10px 10px 10px 10px;
+    margin: 10px 0px;
     background-color: #18283B;
+    height: 130px;
+
+    img{
+        height: 100%;
+    }
 }
 
 mat-sidenav{
     background-color: #18283B;
     width: 160px;
+    height: 100%;
 }
 
 .side-nav-items {

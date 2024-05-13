@@ -3,7 +3,7 @@
 
 
 .title {
-    padding: 20px 250px 0px;
+    padding: 20px 170px 0px;
   
     h2.section-title {
       font-size: 35px;
@@ -20,6 +20,39 @@
       text-align: left;
     }
   }
+
+  .title.flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    p.view-more {
+      margin: 0;
+      padding: 0px 20px;
+      border: 2px solid;
+      border-radius: 20px;
+      cursor: pointer;
+      transition: all 0.3s;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 5px;
+
+      span.svg {
+        padding-top: 6px;
+        transition: all 0.3s;
+      }
+
+      &:hover{
+        border: 2px solid #fff;
+        color: #130649;
+
+        span.svg{
+          transform: rotate(360deg);
+        }
+      }
+  }
+}
   
   .page-content {
     display: grid;
