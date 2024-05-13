@@ -8,6 +8,11 @@ mat-toolbar{
     position: fixed;
     z-index: 9999;
 
+    span.website-name {
+        margin-left: 120px;
+        font-style: italic;
+    }
+
     a{
         padding: 8px 30px;
         margin: 0 10px;
