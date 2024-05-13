@@ -1,6 +1,6 @@
 body {  
   font-family: Calibri, Helvetica, sans-serif;  
-  background: linear-gradient(90deg, #C7C5F4, #776BCC);  
+  background: linear-gradient(33deg, #F5CCF6, #F1EEF9); 
   display: flex;
   justify-content: center;
   align-items: center;
@@ -37,7 +37,7 @@ button:hover {
 
 .container {   
      padding: 30px;  
-     
+     box-shadow: 0 4px 21px -12px rgba(0, 0, 0, .66);
    
 }   
 .container h1{
