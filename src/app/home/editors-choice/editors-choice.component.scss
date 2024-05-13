@@ -281,7 +281,8 @@
 }
 
 .title {
-  padding: 20px 250px 0px;
+  padding: 20px 170px 0px;
+  padding-top: 80px;
 
   h2.section-title {
     font-size: 35px;
@@ -296,5 +297,6 @@
   @media screen and (max-width: 768px) {
     padding: 20px 20px 0px;
     text-align: left;
+    padding-top: 170px;
   }
 }
