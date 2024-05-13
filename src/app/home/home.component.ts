@@ -1,12 +1,45 @@
-import { Component } from '@angular/core';
+import { AfterViewInit, Component} from '@angular/core';
+
+// import Swiper and modules styles
+import Swiper from 'swiper';
+import {Navigation, Pagination } from 'swiper/modules';
+
+import 'swiper/swiper-bundle.css';
+import { EditorsChoiceComponent } from './editors-choice/editors-choice.component';
+import { ArticleCardComponent } from './article-card/article-card.component';
+import { FooterComponent } from '../layout/footer/footer.component';
+// import Swiper bundle with all modules installed
+
+
 
 @Component({
   selector: 'amader-chuti-home',
   standalone: true,
-  imports: [],
+  imports: [EditorsChoiceComponent, ArticleCardComponent, FooterComponent],
   templateUrl: './home.component.html',
-  styleUrl: './home.component.scss'
+  styleUrl: './home.component.scss',
 })
-export class HomeComponent {
+export class HomeComponent implements AfterViewInit{
+
+  ngAfterViewInit() {
+    Swiper.use([Navigation, Pagination]);
+
+    const swiper = new Swiper('.blog-slider', {
+      spaceBetween: 30,
+      speed: 500,
+      effect: 'fade',
+      loop: true,
+      mousewheel: {
+        invert: false,
+        sensitivity: 0.5,
+        eventsTarget: '.blog-slider',
+      },
+      pagination: {
+        el: '.blog-slider__pagination',
+        clickable: true,
+      }
+    });
+    swiper.mousewheel.enable();
+  }
 
 }
