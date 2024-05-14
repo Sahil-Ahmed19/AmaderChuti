@@ -1,6 +1,6 @@
 body {  
   font-family: Calibri, Helvetica, sans-serif;  
-  background: linear-gradient(90deg, #C7C5F4, #776BCC);  
+  background: linear-gradient(33deg, #F5CCF6, #F1EEF9); 
   display: flex;
   justify-content: center;
   align-items: center;
@@ -31,13 +31,14 @@ input[type=text], input[type=password] {
   box-sizing: border-box;   
 }  
 button:hover {  
- background:green ;
+ 
      opacity: calc(0.8);
 }   
 
 .container {   
      padding: 30px;  
-     
+     border-radius: 30px;
+     box-shadow: 0 4px 21px -12px rgba(0, 0, 0, .66);
    
 }   
 .container h1{
