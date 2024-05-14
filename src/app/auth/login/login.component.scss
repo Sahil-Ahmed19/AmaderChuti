@@ -31,12 +31,13 @@ input[type=text], input[type=password] {
   box-sizing: border-box;   
 }  
 button:hover {  
- background:green ;
+ 
      opacity: calc(0.8);
 }   
 
 .container {   
      padding: 30px;  
+     border-radius: 30px;
      box-shadow: 0 4px 21px -12px rgba(0, 0, 0, .66);
    
 }   
