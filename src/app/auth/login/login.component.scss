@@ -10,8 +10,9 @@ button {
   background: linear-gradient(90deg, #C7C5F4, #776BCC);    
   width: 100%;  
   color:black;   
-  padding: 15px;   
-  margin: 10px 0px;   
+  padding: 10px 20px;
+  border-radius: 3px;   
+  margin-top: 15px;
   border: none;   
   cursor: pointer;   
 }   
@@ -19,12 +20,12 @@ form {
   border: 3px solid #f1f1f1;   
   width: 300px;
   padding: 20px;
-  background-color: white;
+  background: linear-gradient(33deg, #F5CCF6, #F1EEF9); 
 }   
 input[type=text], input[type=password] {   
   width: 100%;   
   margin: 8px 0;  
-  padding: 12px 50px;   
+  padding: 12px 20px;   
   display: inline-block;   
   border: 2px solid black; 
   border-radius: 50px;  
@@ -39,10 +40,11 @@ button:hover {
      padding: 30px;  
      border-radius: 30px;
      box-shadow: 0 4px 21px -12px rgba(0, 0, 0, .66);
-   
+    background-color: #fff;
 }   
 .container h1{
     text-align: center;
+    font-weight: 500;
 }
 .signup {
   text-align: center;
@@ -53,6 +55,7 @@ button:hover {
 .signup a {
   color: #4CAF50;
   text-decoration: none;
+  cursor: pointer;
 }
 .signup a:hover{
   color: blue;

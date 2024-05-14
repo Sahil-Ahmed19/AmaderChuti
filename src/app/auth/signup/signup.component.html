@@ -2,17 +2,20 @@
 <body>
 <div class="container">
   <h1>Sign Up</h1>
-  <form>
+  @if(errorMessage) {
+    <div class="error"> {{errorMessage}} </div>
+  }
+  <form [formGroup]="form" (ngSubmit)="onSubmit()">
     <label for="username">Username:</label>
-    <input type="text" id="username" name="username" placeholder="Enter Username">
+    <input type="text" id="username" name="username" placeholder="Enter Username" formControlName="username">
     <label for="email">Email:</label>
-    <input type="email" id="email" name="email" placeholder="Enter Email Address">
+    <input type="email" id="email" name="email" placeholder="Enter Email Address" formControlName="email">
     <label for="password">Password:</label>
-    <input type="password" id="password" name="password" placeholder="Enter Password">
+    <input type="password" id="password" name="password" placeholder="Enter Password" formControlName="password">
     <label for="confirm_password">Confirm Password:</label>
-    <input type="password" id="confirm_password" name="confirm_password" placeholder="Confirm Password">
+    <input type="password" id="confirm_password" name="confirm_password" placeholder="Confirm Password" formControlName="confirmPassword">
     <button type="submit">Sign Up</button>
-    <p class="login">Already have an account? <a href="/login">Login Now</a></p>
+    <p class="login">Already have an account? <a (click)="this.router.navigate(['/login']);">Login Now</a></p>
   </form>
 </div>
 </body>
