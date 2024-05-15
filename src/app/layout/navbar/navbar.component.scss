@@ -6,7 +6,7 @@ mat-toolbar{
     height: 60px;
     background: #18283B;
     position: fixed;
-    z-index: 9999;
+    z-index: 9;
 
     span.website-name {
         margin-left: 120px;
@@ -48,7 +48,7 @@ figure.logo {
 
 mat-sidenav{
     background-color: #18283B;
-    width: 160px;
+    width: 180px;
     height: 100%;
 }
 
@@ -63,6 +63,28 @@ mat-sidenav{
     display: flex;
     align-items: center;
     justify-content: left;
+}
+
+.account_name{
+    background-color: #0280d7 !important;
+
+    p.username {
+        margin: 0;
+        white-space: nowrap;
+    }
+}
+
+::ng-deep .account-menu {
+    &.mat-mdc-menu-panel {
+        border-radius: 16px;
+        width: 200px;
+        position: relative;
+        top: 6px;
+    }
+
+    .mat-mdc-menu-content {
+        padding: 0px;
+    }
 }
 
 @media (min-width:900px) {

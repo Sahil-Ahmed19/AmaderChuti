@@ -1,8 +1,10 @@
-import { Injectable, inject } from '@angular/core';
-import { Auth, createUserWithEmailAndPassword, signInWithEmailAndPassword, updateProfile } from '@angular/fire/auth';
+import { Injectable, inject, signal } from '@angular/core';
+import { Auth, createUserWithEmailAndPassword, signInWithEmailAndPassword, updateProfile, user } from '@angular/fire/auth';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
 import { Router } from '@angular/router';
 import { Observable, from } from 'rxjs';
+import { UserInterface } from '../../user.interface';
+import { signOut } from 'firebase/auth';
 
 @Injectable({
   providedIn: 'root'
@@ -10,7 +12,10 @@ import { Observable, from } from 'rxjs';
 export class AuthService {
 
   firebaseAuth = inject(Auth);
+  user$ = user(this.firebaseAuth)
   router = inject(Router);
+
+  currenUserSignal = signal<UserInterface | null | undefined>(undefined)
 
   register(
     email: string, 
@@ -34,6 +39,11 @@ export class AuthService {
       email,
       password
     ).then(() => {});
+    return from(promise);
+  }
+
+  logout(): Observable<void> {
+    const promise = signOut(this.firebaseAuth);
     return from(promise);
   }
 
