@@ -1,0 +1,26 @@
+
+::ng-deep button.swal2-confirm {
+    padding: 10px 20px;
+}
+
+::ng-deep button.swal2-cancel {
+    padding: 10px 20px;
+    background-color: #b1a3a3 !important;
+}
+
+::ng-deep .swal2-container .swal2-html-container {
+    margin: 0em 1.6em 0em;
+}
+
+::ng-deep  h2.swal2-title{
+    margin: 0;
+    padding: 0.5em 1em 0.5em;
+}
+
+::ng-deep .swal2-icon {
+    margin: 1.5em auto .6em;
+}
+
+.swal2-popup {
+    font-size: 0.8rem;
+}

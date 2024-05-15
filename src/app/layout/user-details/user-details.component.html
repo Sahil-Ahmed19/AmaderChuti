@@ -1,0 +1,19 @@
+<div class="container">
+    <div class="name">
+        <figure class="user-img">
+            <img src="assets/svg-icons/mask-group.svg">
+        </figure>
+        <div class="company-logo">
+            <img src="assets/svg-icons/company.svg" class="company-img">
+        </div>
+    </div>
+    <div class="user-details">
+        <h4 class="company-name"> {{authService.currenUserSignal()?.username}} </h4>
+        <p class="email"> {{authService.currenUserSignal()?.email!.length > 18 ? authService.currenUserSignal()?.email!.slice(0,3) + '***' + authService.currenUserSignal()?.email!.slice(-10) : authService.currenUserSignal()?.email}} </p>
+        <hr class="underline">
+        <div class="logout" (click)="authService.logout()">
+            <img src="assets/svg-icons/logout.svg" class="logout-img">
+            <p class="logout-text">Logout</p>
+        </div>
+    </div>
+</div>

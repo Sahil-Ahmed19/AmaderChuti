@@ -1,0 +1,92 @@
+.container {
+    box-shadow: 0px 2px 8px rgba(0,0,0,0.04);
+    overflow: hidden;
+
+    .name {
+        background: linear-gradient(to bottom, #644BFF, #3D29BF);
+        border-top-right-radius: 16px;
+        border-top-left-radius: 16px;
+        position: relative;
+
+        figure.user-img {
+            margin: 0;
+        }
+
+        .company-logo {
+            width: 68px;
+            position: absolute;
+            height: 68px;
+            bottom: -50%;
+            border: 3px solid #5039DF;
+            left: 34%;
+            background-color: #fff;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            img.company-img {
+                width: 27px;
+                height: 32px;
+            }
+        }
+    }
+
+    .user-details {
+        padding:  15px 25px;
+        background-color: #fff;
+        border-bottom-left-radius: 16px;
+        border-bottom-right-radius: 16px;
+        text-align: center;
+
+        h4.company-name {
+            margin-top: 30px;
+            margin-bottom: 2px;
+            font-size: 16px;
+            font-weight: 500;
+            letter-spacing: -0.02px;
+        }
+
+        p.email {
+            font-size: 14px;
+            color: #535353;
+            margin-bottom: 2px;
+        }
+
+        p.number {
+            font-size: 14px;
+            color: #535353;
+            font-weight: 500;
+        }
+
+        hr.underline {
+            border: 1px solid #DDDDDD;
+        }
+
+        .logout {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 5px;
+            margin-top: 10px;
+            padding: 5px 0px;
+            border-radius: 2px;
+            transition: all 0.2s;
+            cursor: pointer;
+
+            p.logout-text {
+                margin: 0;
+                font-size: 14px;
+                letter-spacing: -0.02px;
+            }
+
+            img {
+                width: auto;
+            }
+
+            &:hover {
+                background-color: #ccc;
+            }
+        }
+    }
+}

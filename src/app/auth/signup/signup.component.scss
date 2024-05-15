@@ -9,18 +9,16 @@ body {
   }  
   
   .container {
-    background:white;
-    padding:30px;
+    padding: 30px;
+    margin-top: 60px;
     border-radius: 30px;
-    box-shadow: 0 4px 21px -12px rgba(0, 0, 0, .66);
-    
+    box-shadow: 0 4px 21px -12px rgba(0, 0, 0, 0.66);
+    background-color: #fff;
   }
+
   form {   
-    border: 3px solid #f1f1f1;   
     width: 300px;
-    padding: 20px;
-    //background-color: white;
-    background: linear-gradient(33deg, #F5CCF6, #F1EEF9);  
+    padding: 10px;
   }   
   
   h1 {
@@ -39,21 +37,21 @@ body {
   input[type="password"] {
     width: 100%;
     margin: 8px 0;
-    padding: 12px 20px; 
-    border: 2px solid black; 
-    border-radius: 50px; 
+    padding: 12px 20px;
     display: inline-block;
+    border: 1px solid #9c9898;
+    border-radius: 3px;
     box-sizing: border-box;
   }
   
   button {
-    background: linear-gradient(90deg, #C7C5F4, #776BCC);    
-    color: black;
-    padding: 10px 20px;
-    border: none;
-    margin-top: 10px;
     width: 100%;
+    color: black;
+    padding: 12px 20px;
     border-radius: 3px;
+    margin-top: 15px;
+    border: none;
+    background-color: #F5CCF6;
     cursor: pointer;
   }
   
@@ -63,16 +61,21 @@ body {
   
   .login {
     text-align: center;
-    margin-top: 15px;
-    color:black;
+    margin-top: 30px;
+    margin-bottom: 0px;
+    color: #000;
   }
   
   .login a {
-    color: #4CAF50;
+    color: #000;
     text-decoration: none;
+    padding: 5px 10px;
+    background-color: #e8f0fe;
+    border-radius: 3px;
     cursor: pointer;
 
     &:hover{
       color: blue;
+      box-shadow: 0 4px 21px -12px rgba(0, 0, 0, 0.66);
     }
   }
