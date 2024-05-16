@@ -1,0 +1,60 @@
+.image-container {
+    position: relative;
+  }
+  .para{
+    position: absolute;
+    bottom: 138px;
+    left: 126px;
+    font-size: 55px;
+    justify-content: space-around;
+    color: white;
+    font-size:25px ;
+    line-height: 1;  
+
+}
+  
+  .bottomleft {
+    position: absolute;
+    bottom: 38px;
+    left: 56px;
+    font-size: 22px;
+    justify-content: space-between;
+    color: white;
+  }
+  
+  img { 
+    width: 100%;
+    height: auto;
+    opacity: 1;
+  }
+  
+.profile{
+    height:30px;
+    width:30px;
+    border:2px solid black;
+    border-radius:50px;
+    display:inline;
+    
+}
+.bottomright {
+    position: absolute;
+    bottom: 38px;
+    right: 56px;
+    font-size: 22px;
+    justify-content: space-between;
+    color:white
+  }
+
+
+.photo-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px; 
+}
+
+.photo {
+    width: calc(25% - 20px); 
+    aspect-ratio: 1 / 1; 
+    object-fit: cover; 
+    background-color:white; 
+}
