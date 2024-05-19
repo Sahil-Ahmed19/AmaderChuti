@@ -1,0 +1,47 @@
+<!-- 
+<div class="editor">
+    <angular-editor [placeholder]="'Enter text here...'" [config]="config" [(ngModel)]="htmlContent"></angular-editor>
+</div>
+
+<div class="content">
+    {{htmlContent}}
+</div>
+
+<div class="content" [innerHTML]="htmlContent">
+</div> -->
+
+<div class="form-title">
+    <button mat-raised-button color="primary" (click)="addInput(1)"> Add Text</button>
+    <button mat-raised-button color="primary" (click)="addInput(2)"> Add Image</button>
+</div>
+
+<!-- 
+<div *ngFor="let input of inputs; let i = index">
+    <input type="text" [(ngModel)]="inputs[i]" placeholder="Enter value" />
+</div>
+<button (click)="addInput()">Add Input </button> -->
+
+@for (item of items; track $index) {
+
+    @if(item.id == 1){
+        <div class="form">
+            <mat-form-field class="example-form-field" appearance="outline">
+                <mat-label>Write</mat-label>
+                <textarea matInput [(ngModel)]="item.content"></textarea>
+            </mat-form-field>
+        </div>
+    }@else {
+        <div class="form">
+            <input type="file" class="input-file" id="file" name="file" [(ngModel)]="item.content" />
+            <label for="file" class="btn btn-upload">
+            Choose File
+            </label>
+        </div>
+    }  
+}
+
+
+
+
+
+
