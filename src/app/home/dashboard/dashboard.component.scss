@@ -1,3 +1,83 @@
-.button{
-    margin: 200px;
+.profile-container {
+    background: linear-gradient(33deg, #F5CCF6, #F1EEF9); 
+   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    display: flex;
+    padding: 20px;
+     width: 100%;
+   
+}
+.icon{
+    height: 200px;
+    width: 200px;
+    margin-left: 160px;
+    margin-top: 50px;
+}
+.profile-details {
+    margin-left: 20px;
+    margin-left: 20px;
+    margin-top: 50px;
+}
+
+.profile-details h2 {
+    margin: 0;
+    font-size: 18px;
+    color: #333;
+    font-weight: bold;
+}
+
+
+.profile-details p {
+    margin: 5px 0;
+    color: black;
+    font-weight: bold;
+    
+}
+.profile-about{
+    background: linear-gradient(33deg, #F5CCF6, #F1EEF9); 
+   
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    display: flex;
+    padding: 20px;
+   
+   margin-top: 90px;
+   margin-left: 300px;
+   margin-right: 300px;
+  
+}
+.title{
+    color: black;
+    font-weight: bold;
+    margin: auto;
+}
+.blog-details{
+    background: linear-gradient(33deg, #F5CCF6, #F1EEF9); 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.6);
+    display: flex;
+    padding: 15px;
+    // width: 100%;
+    justify-content: space-between;
+    margin-top: 20px;
+    margin-left: 50px;
+    margin-right: 50px;
+   
+
+}
+.blog-details p{
+    color: black;
+    font-weight: bold;
+}
+.blog-image{
+    height: 60px;
+    width: 60px;
+}
+Button{
+    color: white;
+    background-color: green;
+    padding: 7px 7px;
+    border-radius: 10px;
+}
+Button:hover{
+    color:black;
+    background-color: #a8ff78;
+    opacity: 1;
 }
