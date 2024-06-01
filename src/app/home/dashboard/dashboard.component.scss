@@ -1,6 +1,6 @@
 .profile-container {
     background: linear-gradient(33deg, #F5CCF6, #F1EEF9); 
-   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
     display: flex;
     padding: 20px;
      width: 100%;
@@ -35,10 +35,14 @@
 .profile-about{
     background: linear-gradient(33deg, #F5CCF6, #F1EEF9); 
    
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
     display: flex;
     padding: 20px;
-   width: 100%;
+   
+   margin-top: 90px;
+   margin-left: 300px;
+   margin-right: 300px;
+  
 }
 .title{
     color: black;
@@ -47,15 +51,16 @@
 }
 .blog-details{
     background: linear-gradient(33deg, #F5CCF6, #F1EEF9); 
-   
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.6);
     display: flex;
-    padding: 20px;
-    width: 100%;
+    padding: 15px;
+    // width: 100%;
     justify-content: space-between;
-    margin:15px 15pxss;
-    height: 100%;
-    max-height: 200px;
+    margin-top: 20px;
+    margin-left: 50px;
+    margin-right: 50px;
+   
+
 }
 .blog-details p{
     color: black;
