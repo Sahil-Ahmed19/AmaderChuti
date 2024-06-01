@@ -1,12 +1,17 @@
-import { Injectable } from '@angular/core';
+import { Injectable, inject } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { SnackbarComponent } from '../shared/snackbar/snackbar.component';
 import Swal from 'sweetalert2';
+import { Firestore, collectionData, collection, where, query } from '@angular/fire/firestore';
+import { Observable } from 'rxjs';
+
 
 @Injectable({
   providedIn: 'root'
 })
 export class MainService {
+
+  firestore: Firestore = inject(Firestore);
 
   constructor(private snackBar: MatSnackBar) { }
 
@@ -34,6 +39,17 @@ export class MainService {
         // this.ser_main.cur_url.goTo('/login');
       }
     });
+  }
+
+  getCollectionData(collectionPath: string): Observable<any[]> {
+    const col = collection(this.firestore, collectionPath);
+    return collectionData(col);
+  }
+
+  getEditorsChoiceData(collectionPath: string): Observable<any[]> {
+    const colRef = collection(this.firestore, collectionPath);
+    const q = query(colRef, where('isEditorsChoice', '==', 1));
+    return collectionData(q, { idField: 'id' });
   }
 
 }
