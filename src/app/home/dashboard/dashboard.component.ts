@@ -15,6 +15,10 @@ import { AuthService } from '../../auth/service/auth.service';
 export class DashboardComponent implements OnInit {
 
   data: any = [];
+  userData: any = [];
+  userEmail: string | undefined;
+  mobile: string = "";
+  location: string = "";
   router = inject(Router);
   mainSer = inject(MainService);
   authService = inject(AuthService);
@@ -30,12 +34,25 @@ export class DashboardComponent implements OnInit {
       console.log(data);
       this.cdr.detectChanges(); // Trigger change detection
       this.spinner.hide();
+      this.userEmail = this.authService.currenUserSignal()?.email;
+      this.mainSer.getDocumentById('users', this.userEmail).subscribe((data) => {
+      this.userData = data;
+      this.mobile = this.userData.mobile;
+      this.location = this.userData.location;
+      console.log(this.userData, 'userdata');
+      this.spinner.hide()
+      })
     });
   }
 
   openArticlePage(data: any){
     const articleData = data; // Data to pass
     this.router.navigate(['/article'], { queryParams: { data: JSON.stringify(articleData) } });
+  }
+
+  getCurrentUserEmail(): string | undefined {
+    const currentUser = this.authService.currenUserSignal();
+    return currentUser?.email;
   }
 
 

@@ -1,10 +1,10 @@
 import { Injectable, inject, signal } from '@angular/core';
 import { Auth, createUserWithEmailAndPassword, signInWithEmailAndPassword, updateProfile, user } from '@angular/fire/auth';
-import { AngularFireAuth } from '@angular/fire/compat/auth';
 import { Router } from '@angular/router';
 import { Observable, from } from 'rxjs';
 import { UserInterface } from '../../user.interface';
 import { signOut } from 'firebase/auth';
+import { Firestore, collection, doc, setDoc } from '@angular/fire/firestore';
 
 @Injectable({
   providedIn: 'root'
@@ -14,6 +14,9 @@ export class AuthService {
   firebaseAuth = inject(Auth);
   user$ = user(this.firebaseAuth)
   router = inject(Router);
+
+  constructor(private firestore: Firestore) {}
+
 
   currenUserSignal = signal<UserInterface | null | undefined>(undefined)
 
@@ -45,6 +48,11 @@ export class AuthService {
   logout(): Observable<void> {
     const promise = signOut(this.firebaseAuth);
     return from(promise);
+  }
+
+  addDocumentWithId(collectionPath: string, docId: string, data: any): Promise<void> {
+    const docRef = doc(this.firestore, `${collectionPath}/${docId}`);
+    return setDoc(docRef, data);
   }
 
 }

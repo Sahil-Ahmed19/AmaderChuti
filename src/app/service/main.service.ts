@@ -2,8 +2,8 @@ import { Injectable, inject } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { SnackbarComponent } from '../shared/snackbar/snackbar.component';
 import Swal from 'sweetalert2';
-import { Firestore, collectionData, collection, doc, updateDoc } from '@angular/fire/firestore';
-import { Observable } from 'rxjs';
+import { Firestore, collectionData, collection, doc, updateDoc, DocumentReference, DocumentData, getDoc } from '@angular/fire/firestore';
+import { Observable, from, map } from 'rxjs';
 
 
 @Injectable({
@@ -39,6 +39,13 @@ export class MainService {
         // this.ser_main.cur_url.goTo('/login');
       }
     });
+  }
+
+  getDocumentById(collectionPath: string, docId: string | undefined): Observable<DocumentData | undefined> {
+    const docRef: DocumentReference<DocumentData> = doc(this.firestore, `${collectionPath}/${docId}`);
+    return from(getDoc(docRef)).pipe(
+      map(docSnapshot => docSnapshot.exists() ? docSnapshot.data() : undefined)
+    );
   }
 
   getCollectionData(collectionPath: string): Observable<any[]> {

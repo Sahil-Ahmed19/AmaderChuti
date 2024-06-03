@@ -21,8 +21,10 @@ export class SignupComponent {
 
   form = this.fb.nonNullable.group({
     username: ['', Validators.required],
-    email: ['', Validators.required],
+    email: ['', Validators.required, Validators.email],
     password: ['', Validators.required],
+    mobno: ['', Validators.required],
+    location: ['', Validators.required],
   });
 
   errorMessage: string | null = null;
@@ -31,8 +33,18 @@ export class SignupComponent {
     const rawForm = this.form.getRawValue()
     this.authService.register(rawForm.email, rawForm.username, rawForm.password).subscribe({
       next: () => {
-        this.ser_main.openSnackBar('Registration Successful', 'right', 'top', 5000,);
-        this.router.navigate(['/login']);
+        const userData = {
+          email: rawForm.email,
+          name: rawForm.username,
+          mobile: rawForm.mobno,
+          location: rawForm.location,
+          type: "1"
+        };
+        const userDocId = rawForm.email;
+        this.authService.addDocumentWithId('users', userDocId, userData).then(() => {
+          this.ser_main.openSnackBar('Registration Successful', 'right', 'top', 5000);
+          this.router.navigate(['/login']);
+        })
     },
     error: (err) => {
       this.errorMessage = err.code;
