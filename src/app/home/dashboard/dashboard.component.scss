@@ -11,6 +11,48 @@
    
 }
 
+.application_status {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    width: 115px;
+    height: 35px;
+    padding: 3px 8px;
+    border-radius: 5px;
+    color: #fff;
+    margin-top: 6px;
+
+    svg{
+        width: 20%;
+    }
+
+    &.pending {
+        background-color: #D87909;
+        // background-color: #ED9C2B;
+
+    }
+
+    &.rejected {
+        background-color: #E81717;
+    }
+
+    &.reverted {
+        background-color: #6632DE;
+    }
+
+    &.approved {
+        // background-color: #18A326;
+        background-color: #39C32F;
+
+    }
+
+    p.status_text {
+        margin: 0;
+        width: 80%;
+    }
+}
+
 .profile-details h2 {
     margin: 0;
     font-size: 30px;
