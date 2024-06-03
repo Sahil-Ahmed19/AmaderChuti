@@ -4,6 +4,7 @@ import { NgxSpinnerModule, NgxSpinnerService } from 'ngx-spinner';
 import { MaterialModule } from '../material/material.module';
 import { FormControl, ReactiveFormsModule } from '@angular/forms';
 import { MainService } from '../service/main.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'amader-chuti-view-article',
@@ -56,6 +57,7 @@ export class ViewArticleComponent implements OnInit {
   updateArticle(docId: string, newData: any) {
     this.mainSer.updateDocument('articles', docId, newData).then(() => {
       console.log('Document successfully updated!');
+      this.mainSer.openSnackBar('Published Successfully!', 'right', 'top', 5000);
     }).catch((error) => {
       console.error('Error updating document: ', error);
     });
@@ -69,7 +71,34 @@ export class ViewArticleComponent implements OnInit {
       date: this.formatDate(new Date())
     };
 
-    this.updateArticle(docId, newArticleData);
+
+    Swal.fire({
+      title: 'Are you sure?',
+      text: "You won't be able to revert this action!",
+      icon: 'question',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#3085d6',
+      confirmButtonText: 'Confirm',
+      customClass: {
+        container: 'approve',
+        popup: 'popup-class',
+        title: 'sweet_titleImportant',
+        closeButton: 'close-button-class',
+        icon: 'icon-class',
+        image: 'image-class',
+        input: 'input-class',
+        actions: 'actions-class',
+        confirmButton: 'confirm-button-class',
+        cancelButton: 'cancel-button-class',
+        footer: 'sweet_titleImportant'
+      }
+    }).then((result) => {
+      if(result.isConfirmed){
+        this.updateArticle(docId, newArticleData);
+      }
+    })
+    
   }
 
   // Helper function to format the date
