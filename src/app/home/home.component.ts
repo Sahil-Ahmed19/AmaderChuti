@@ -1,9 +1,10 @@
-import { Component} from '@angular/core';
+import { Component, inject} from '@angular/core';
 
 import 'swiper/swiper-bundle.css';
 import { EditorsChoiceComponent } from './editors-choice/editors-choice.component';
 import { ArticleCardComponent } from './article-card/article-card.component';
 import { FooterComponent } from '../layout/footer/footer.component';
+import { Router } from '@angular/router';
 // import Swiper bundle with all modules installed
 
 
@@ -17,5 +18,10 @@ import { FooterComponent } from '../layout/footer/footer.component';
 })
 export class HomeComponent{
 
+  router = inject(Router);
+
+  gotoApp() {
+    this.router.navigate(['']);
+  }
 
 }

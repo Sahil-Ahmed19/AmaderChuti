@@ -26,6 +26,7 @@ export class DashboardComponent implements OnInit {
     this.spinner.show();
     this.mainSer.getCollectionData('articles').subscribe((data) => {
       this.data = data;
+      this.data = this.data.sort((a:any, b:any) => parseInt(b.postTime) - parseInt(a.postTime));
       console.log(data);
       this.cdr.detectChanges(); // Trigger change detection
       this.spinner.hide();

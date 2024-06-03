@@ -2,7 +2,7 @@ import { Injectable, inject } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { SnackbarComponent } from '../shared/snackbar/snackbar.component';
 import Swal from 'sweetalert2';
-import { Firestore, collectionData, collection, where, query } from '@angular/fire/firestore';
+import { Firestore, collectionData, collection, doc, updateDoc } from '@angular/fire/firestore';
 import { Observable } from 'rxjs';
 
 
@@ -43,13 +43,18 @@ export class MainService {
 
   getCollectionData(collectionPath: string): Observable<any[]> {
     const col = collection(this.firestore, collectionPath);
-    return collectionData(col);
+    return collectionData(col, { idField: 'id' });
   }
 
-  getEditorsChoiceData(collectionPath: string): Observable<any[]> {
-    const colRef = collection(this.firestore, collectionPath);
-    const q = query(colRef, where('isEditorsChoice', '==', 1));
-    return collectionData(q, { idField: 'id' });
+  updateDocument(collectionPath: string, docId: string, data: any): Promise<void> {
+    const docRef = doc(this.firestore, `${collectionPath}/${docId}`);
+    return updateDoc(docRef, data);
   }
+
+  // getEditorsChoiceData(collectionPath: string): Observable<any[]> {
+  //   const colRef = collection(this.firestore, collectionPath);
+  //   const q = query(colRef, where('isEditorsChoice', '==', 1));
+  //   return collectionData(q, { idField: 'id' });
+  // }
 
 }

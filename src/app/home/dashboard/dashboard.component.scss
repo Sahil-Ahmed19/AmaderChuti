@@ -65,6 +65,16 @@
 
         .content {
             flex: 1;
+
+            .status_container {
+                margin-top: 35px;
+            }
+
+            span.status {
+                background-color: greenyellow;
+                padding: 10px;
+                border-radius: 6px;
+            }
         }
 
         img {

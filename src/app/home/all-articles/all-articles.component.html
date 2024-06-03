@@ -1,15 +1,15 @@
 <div class="article-container">
     <div class="title flex">
       <h2 class="section-title">Articles</h2>
-      <p class="view-more" (click)="openAllArticles()">
+      <!-- <p class="view-more">
         View more
         <span class="svg"><img src="assets/svg-icons/right-arrow.svg"></span>
-      </p>
+      </p> -->
     </div>
 
     <main class="page-content">
 
-      @for (item of sortedData; track $index) {
+      @for (item of data; track $index) {
         @if (item.status == 2) {
           <div class="card" [ngStyle]="{'background-image': 'url(' + item.imageUrl + ')'}"> 
             <div class="content">

@@ -1,52 +1,4 @@
-<!-- <div class="editors-choice-container">
-    <div class="title">
-      <h2 class="section-title">Editor's Choice</h2>
-    </div>
-    <div class="blog-slider">
-      <div class="blog-slider__wrp swiper-wrapper">
 
-        <div class="blog-slider__item swiper-slide">
-          <div class="blog-slider__img">
-            <img src="assets/images/ladakh.jpg" alt="">
-          </div>
-          <div class="blog-slider__content">
-            <span class="blog-slider__code">26 December 2019</span>
-            <div class="blog-slider__title">Lorem Ipsum Dolor</div>
-            <div class="blog-slider__text">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Recusandae voluptate repellendus magni illo ea animi? </div>
-            <a class="blog-slider__button" (click)="this.router.navigate(['/article']);">READ MORE</a>
-          </div>
-        </div>
-        <div class="blog-slider__item swiper-slide">
-          <div class="blog-slider__img">
-            <img src="assets/images/nature.jpg" alt="">
-          </div>
-          <div class="blog-slider__content">
-            <span class="blog-slider__code">26 December 2019</span>
-            <div class="blog-slider__title">Lorem Ipsum Dolor2</div>
-            <div class="blog-slider__text">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Recusandae voluptate repellendus magni illo ea animi?</div>
-            <a class="blog-slider__button" (click)="this.router.navigate(['/article']);">READ MORE</a>
-          </div>
-        </div>
-
-        @for(item of data; track $index){
-          @if (item.isEditorsChoice == 1) {
-            <div class="blog-slider__item swiper-slide">
-              <div class="blog-slider__img">
-                <img [src]="item.imageUrl" alt="">
-              </div>
-              <div class="blog-slider__content">
-                <span class="blog-slider__code">26 December 2019</span>
-                <div class="blog-slider__title"> {{item.title}} </div>
-                <div class="blog-slider__text">  {{item.overview}} </div>
-                <a class="blog-slider__button" (click)="this.router.navigate(['/article']);">READ MORE</a>
-              </div>
-            </div>
-          }
-        }
-      </div>
-      <div class="blog-slider__pagination"></div>
-    </div>
-  </div> -->
 
   <ngx-spinner bdColor="rgba(51,51,51,0.8)" size="medium" color="#fff" type="ball-scale-multiple">
     <p style="font-size: 20px; color: white">Loading...</p>
@@ -58,17 +10,6 @@
     </div>
     <div class="blog-slider swiper-container">
       <div class="blog-slider__wrp swiper-wrapper">
-        <!-- <div class="blog-slider__item swiper-slide" *ngFor="let post of data">
-          <div class="blog-slider__img">
-            <img [src]="post.imageUrl" alt="">
-          </div>
-          <div class="blog-slider__content">
-            <span class="blog-slider__code">{{ post.date }}</span>
-            <div class="blog-slider__title">{{ post.title }}</div>
-            <div class="blog-slider__text">{{ post.description }}</div>
-            <a class="blog-slider__button" (click)="navigateToArticle(post.id)">READ MORE</a>
-          </div>
-        </div> -->
 
         @for(item of data; track $index){
           @if (item.isEditorsChoice == 1) {
@@ -77,10 +18,10 @@
                 <img [src]="item.imageUrl" alt="">
               </div>
               <div class="blog-slider__content">
-                <span class="blog-slider__code">26 December 2019</span>
+                <span class="blog-slider__code"> {{item.date}} </span>
                 <div class="blog-slider__title"> {{item.title}} </div>
                 <div class="blog-slider__text">  {{item.overview}} </div>
-                <a class="blog-slider__button" (click)="this.router.navigate(['/article']);">READ MORE</a>
+                <a class="blog-slider__button" (click)="openArticlePage(item)">READ MORE</a>
               </div>
             </div>
           }

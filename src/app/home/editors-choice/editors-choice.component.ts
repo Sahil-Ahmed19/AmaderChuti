@@ -56,8 +56,9 @@ export class EditorsChoiceComponent implements OnInit{
     swiper.mousewheel.enable();
   }
 
-  navigateToArticle(id: number) {
-    this.router.navigate(['/article', id]);
+  openArticlePage(data: any){
+    const articleData = data; // Data to pass
+    this.router.navigate(['/article'], { queryParams: { data: JSON.stringify(articleData), isHomePage : true } });
   }
 
 }

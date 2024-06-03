@@ -266,13 +266,14 @@
 .projcard-tagbox button {
   bottom: 3%;
   font-size: 25px;
-  cursor: default;
+  cursor: pointer;
   user-select: none;
   padding: 10px 20px;
   border-radius: 25px;
   text-decoration: none;
   border: none;
   outline: none;
+  color: #fff;
   background: purple;
   box-shadow: 0 4px 21px -12px rgba(0, 0, 0, .66);
   transition: box-shadow 0.2s ease, transform 0.2s ease;

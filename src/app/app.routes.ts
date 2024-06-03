@@ -5,6 +5,7 @@ import { SignupComponent } from './auth/signup/signup.component';
 import { ViewArticleComponent } from './view-article/view-article.component';
 import { DashboardComponent } from './home/dashboard/dashboard.component';
 import { EditBlogComponent } from './home/edit-blog/edit-blog.component';
+import { AllArticlesComponent } from './home/all-articles/all-articles.component';
 
 export const routes: Routes = [
     {path: '', component: HomeComponent},
@@ -13,4 +14,6 @@ export const routes: Routes = [
     {path: 'article', component: ViewArticleComponent},
     {path: 'dashboard', component: DashboardComponent},
     {path: 'edit', component: EditBlogComponent},
+    {path: 'all-articles', component: AllArticlesComponent},
+
 ];

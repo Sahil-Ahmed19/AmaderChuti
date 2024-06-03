@@ -1,20 +1,19 @@
-import { ChangeDetectorRef, Component, OnInit, inject } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { ChangeDetectorRef, Component, inject } from '@angular/core';
+import { NgxSpinnerModule, NgxSpinnerService } from 'ngx-spinner';
 import { MainService } from '../../service/main.service';
 import { Router } from '@angular/router';
-import { NgxSpinnerModule, NgxSpinnerService } from 'ngx-spinner';
-import { CommonModule } from '@angular/common';
 
 @Component({
-  selector: 'amader-chuti-article-card',
+  selector: 'amader-chuti-all-articles',
   standalone: true,
   imports: [NgxSpinnerModule, CommonModule],
-  templateUrl: './article-card.component.html',
-  styleUrl: './article-card.component.scss'
+  templateUrl: './all-articles.component.html',
+  styleUrl: './all-articles.component.scss'
 })
-export class ArticleCardComponent implements OnInit{
+export class AllArticlesComponent {
 
   data: any = [];
-  sortedData: any = [];
   mainSer = inject(MainService);
   router = inject(Router);
   cdr = inject(ChangeDetectorRef);
@@ -26,8 +25,6 @@ export class ArticleCardComponent implements OnInit{
       this.data = data;
       this.data = this.data.filter((item: { status: number; }) => item.status === 2);
       console.log(this.data);
-      this.sortedData = this.data.sort((a:any, b:any) => parseInt(b.postTime) - parseInt(a.postTime)).slice(0, 4);
-      console.log(this.sortedData, 'sorted');
       // console.log(this.data, 'unsorted');
       this.cdr.detectChanges(); // Trigger change detection
       this.spinner.hide();
@@ -38,9 +35,4 @@ export class ArticleCardComponent implements OnInit{
     const articleData = data; // Data to pass
     this.router.navigate(['/article'], { queryParams: { data: JSON.stringify(articleData), isHomePage : true } });
   }
-
-  openAllArticles(){
-    this.router.navigate(['/all-articles']);
-  }
-
 }
