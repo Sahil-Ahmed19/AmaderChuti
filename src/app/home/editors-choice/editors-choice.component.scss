@@ -108,7 +108,7 @@
   }
   
   .blog-slider__img {
-    width: 300px;
+    width: 480px;
     flex-shrink: 0;
     height: 300px;
     background-image: linear-gradient(147deg, #fe8a39 0%, #fd3838 74%);
@@ -132,7 +132,7 @@
     img {
       width: 100%;
       height: 100%;
-      object-fit: cover;
+      // object-fit: contain;
       display: block;
       opacity: 0;
       border-radius: 20px;

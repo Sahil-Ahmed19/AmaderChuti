@@ -58,6 +58,8 @@ export class ViewArticleComponent implements OnInit {
     this.mainSer.updateDocument('articles', docId, newData).then(() => {
       console.log('Document successfully updated!');
       this.mainSer.openSnackBar('Published Successfully!', 'right', 'top', 5000);
+      this.status = 2;
+      this.vld_editors_choice.setValue(this.vld_editors_choice.value);
     }).catch((error) => {
       console.error('Error updating document: ', error);
     });
