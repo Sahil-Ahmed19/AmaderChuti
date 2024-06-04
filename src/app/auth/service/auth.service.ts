@@ -47,6 +47,7 @@ export class AuthService {
 
   logout(): Observable<void> {
     const promise = signOut(this.firebaseAuth);
+    this.router.navigate(['']);
     return from(promise);
   }
 
