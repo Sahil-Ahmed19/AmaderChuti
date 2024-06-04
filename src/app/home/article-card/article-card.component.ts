@@ -25,9 +25,9 @@ export class ArticleCardComponent implements OnInit{
     this.mainSer.getCollectionData('articles').subscribe((data) => {
       this.data = data;
       this.data = this.data.filter((item: { status: number; }) => item.status === 2);
-      console.log(this.data);
+      // console.log(this.data);
       this.sortedData = this.data.sort((a:any, b:any) => parseInt(b.postTime) - parseInt(a.postTime)).slice(0, 4);
-      console.log(this.sortedData, 'sorted');
+      // console.log(this.sortedData, 'sorted');
       // console.log(this.data, 'unsorted');
       this.cdr.detectChanges(); // Trigger change detection
       this.spinner.hide();

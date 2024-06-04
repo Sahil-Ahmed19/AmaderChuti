@@ -17,8 +17,9 @@ export class DashboardComponent implements OnInit {
   data: any = [];
   userData: any = [];
   userEmail: string | undefined;
-  mobile: string = "";
-  location: string = "";
+  mobile: string | undefined = "" ;
+  location: string | undefined = "";
+  type: string | undefined = "";
   router = inject(Router);
   mainSer = inject(MainService);
   authService = inject(AuthService);
@@ -31,17 +32,9 @@ export class DashboardComponent implements OnInit {
     this.mainSer.getCollectionData('articles').subscribe((data) => {
       this.data = data;
       this.data = this.data.sort((a:any, b:any) => parseInt(b.postTime) - parseInt(a.postTime));
-      console.log(data);
+      // console.log(data);
       this.cdr.detectChanges(); // Trigger change detection
       this.spinner.hide();
-      this.userEmail = this.authService.currenUserSignal()?.email;
-      this.mainSer.getDocumentById('users', this.userEmail).subscribe((data) => {
-      this.userData = data;
-      this.mobile = this.userData.mobile;
-      this.location = this.userData.location;
-      console.log(this.userData, 'userdata');
-      this.spinner.hide()
-      })
     });
   }
 

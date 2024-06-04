@@ -41,7 +41,7 @@ export class MainService {
     });
   }
 
-  getDocumentById(collectionPath: string, docId: string | undefined): Observable<DocumentData | undefined> {
+  getDocumentById(collectionPath: string, docId: string | null): Observable<any> {
     const docRef: DocumentReference<DocumentData> = doc(this.firestore, `${collectionPath}/${docId}`);
     return from(getDoc(docRef)).pipe(
       map(docSnapshot => docSnapshot.exists() ? docSnapshot.data() : undefined)

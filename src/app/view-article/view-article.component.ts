@@ -39,7 +39,7 @@ export class ViewArticleComponent implements OnInit {
         this.data = JSON.parse(params['data']);
         this.cdr.detectChanges();
         this.isHomePage = params['isHomePage'];
-        console.log(this.data, 'view page');
+        // console.log(this.data, 'view page');
       }
       this.spinner.hide();
     });
@@ -51,22 +51,22 @@ export class ViewArticleComponent implements OnInit {
 
     this.status = this.data.status;
     
-    console.log(this.vld_editors_choice.value, 'view page');
+    // console.log(this.vld_editors_choice.value, 'view page');
   }
 
   updateArticle(docId: string, newData: any) {
     this.mainSer.updateDocument('articles', docId, newData).then(() => {
-      console.log('Document successfully updated!');
+      // console.log('Document successfully updated!');
       this.mainSer.openSnackBar('Published Successfully!', 'right', 'top', 5000);
       this.status = 2;
       this.vld_editors_choice.setValue(this.vld_editors_choice.value);
     }).catch((error) => {
-      console.error('Error updating document: ', error);
+      // console.error('Error updating document: ', error);
     });
   }
 
   submit(status: number, docId: string ){
-    console.log(this.vld_editors_choice.value);
+    // console.log(this.vld_editors_choice.value);
     const newArticleData = {
       isEditorsChoice: this.vld_editors_choice.value == true ? '1' : '0',
       status: status,

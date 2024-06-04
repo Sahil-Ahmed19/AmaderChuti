@@ -24,7 +24,7 @@ export class AllArticlesComponent {
     this.mainSer.getCollectionData('articles').subscribe((data) => {
       this.data = data;
       this.data = this.data.filter((item: { status: number; }) => item.status === 2);
-      console.log(this.data);
+      // console.log(this.data);
       // console.log(this.data, 'unsorted');
       this.cdr.detectChanges(); // Trigger change detection
       this.spinner.hide();
