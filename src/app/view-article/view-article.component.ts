@@ -69,8 +69,15 @@ export class ViewArticleComponent implements OnInit {
 
   submit(status: number, docId: string ){
     // console.log(this.vld_editors_choice.value);
+    let editorsChoice = '0';
+    if(status == 3){
+      editorsChoice = '0';
+    }else {
+      editorsChoice = this.vld_editors_choice.value == true ? '1' : '0';
+    }
+
     const newArticleData = {
-      isEditorsChoice: this.vld_editors_choice.value == true ? '1' : '0',
+      isEditorsChoice: editorsChoice,
       status: status,
       date: this.formatDate(new Date())
     };
